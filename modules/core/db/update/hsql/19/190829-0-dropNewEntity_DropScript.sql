@@ -1,0 +1,1 @@
+drop table WIZARD_NEW_ENTITY__U46494 if exists cascade ;

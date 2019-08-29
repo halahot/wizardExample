@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:wizard="http://schemas.diedavids.de/wizard/0.1/ui-component.xsd"
+        caption="msg://caption"
+        messagesPack="com.company.wizard.web.screens.checkout">
+    <layout>
+        <wizard:wizard>
+            <wizard:step caption="Step1" screen="step1"/>
+            <wizard:step caption="Step2" screen="step2"/>
+        </wizard:wizard>
+    </layout>
+</window>

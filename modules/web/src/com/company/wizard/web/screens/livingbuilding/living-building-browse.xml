@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="livingBuildingsTable"
+        messagesPack="com.company.wizard.web.screens.livingbuilding">
+    <data readOnly="true">
+        <collection id="livingBuildingsDc"
+                    class="com.company.wizard.entity.LivingBuilding"
+                    view="_local">
+            <loader id="livingBuildingsDl">
+                <query>
+                    <![CDATA[select e from wizard_LivingBuilding e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="livingBuildingsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="livingBuildingsTable"
+                dataLoader="livingBuildingsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="livingBuildingsTable"
+                    width="100%"
+                    dataContainer="livingBuildingsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="address"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="livingBuildingsTable.create"/>
+                <button id="editBtn" action="livingBuildingsTable.edit"/>
+                <button id="removeBtn" action="livingBuildingsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

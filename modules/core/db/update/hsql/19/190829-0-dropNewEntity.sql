@@ -1,0 +1,1 @@
+alter table WIZARD_NEW_ENTITY rename to WIZARD_NEW_ENTITY__U46494 ;
